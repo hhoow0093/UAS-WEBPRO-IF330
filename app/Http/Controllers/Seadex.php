@@ -25,17 +25,17 @@ class Seadex extends Controller
 
     public function contact()
     {
-        return view('components.contact-us');
+        return view('components.contact-us-page');
     }
 
     public function article()
     {
-        return view('components.articles');
+        return view('components.articles-page');
     }
 
     public function about()
     {
-        return view('components.about-us');
+        return view('components.about-us-page');
     }
     
 

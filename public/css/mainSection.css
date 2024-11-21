@@ -46,6 +46,32 @@
 
 
 .pengantar-singkat{
-    min-height: 80vh;
+    min-height: 300px;
 }
 
+#navbar-special {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    background-color: white;
+    transform: translateY(-1000%);
+    transition: transform 0.5s ease-in-out;
+}
+
+#navbar-special.show {
+    transform: translateY(0);
+}
+
+.servicesHome{
+    min-height: 60vh;
+    background-color: #092c49;
+}
+
+.containerku{
+    border-radius: 5px;
+    background-color: #0D426E;
+    padding: 1rem;
+    margin-top: 1rem;
+}

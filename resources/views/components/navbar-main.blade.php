@@ -23,22 +23,22 @@
             </button>
             <ul class="navbar-nav ms-lg-auto p-4 p-lg-1">
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link active fw-bold"  href="/seadex/home">Home</a>
+                    <a class="nav-link navbar1 active fw-bold"  href="/seadex/home">Home</a>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link active fw-bold"  href="/seadex/services">Services</a>
+                    <a class="nav-link navbar1 active fw-bold"  href="/seadex/services">Services</a>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link active fw-bold"  href="/seadex/products">Product</a>
+                    <a class="nav-link navbar1 active fw-bold"  href="/seadex/products">Product</a>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link active fw-bold" href="/seadex/aboutus">About us</a>
+                    <a class="nav-link navbar1 active fw-bold" href="/seadex/aboutus">About us</a>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link active fw-bold"  href="/seadex/contactus">Contact us</a>
+                    <a class="nav-link navbar1 active fw-bold"  href="/seadex/contactus">Contact us</a>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link active fw-bold"  href="/seadex/articles">Articles</a>
+                    <a class="nav-link navbar1 active fw-bold"  href="/seadex/articles">Articles</a>
                 </li>
             </ul>
         </div>

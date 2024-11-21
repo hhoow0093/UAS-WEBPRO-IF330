@@ -5,8 +5,13 @@ body{
 }
 
 @media (min-width: 992px) { 
-    .navbar-nav .nav-link {
+    .navbar-nav .nav-link.navbar1{
         color: white !important;
+        font-size: 1.1rem; 
+    }
+
+    .navbar-nav .nav-link.navbar2{
+        color: black !important;
         font-size: 1.1rem; 
     }
 }
@@ -22,3 +27,4 @@ body{
     cursor: pointer;
     color: #009bb3 !important;
 }
+
