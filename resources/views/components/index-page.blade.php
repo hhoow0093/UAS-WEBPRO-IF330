@@ -8,6 +8,7 @@
     <x-infinite-scroll></x-infinite-scroll>
     <x-featured-product></x-featured-product>
     <x-frequently-asked-question></x-frequently-asked-question>
+    <x-footer></x-footer>
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/mainSection.js"></script>
 </x-layout>

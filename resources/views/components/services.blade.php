@@ -1,6 +1,6 @@
 <section class= "servicesHome mt-3">
     <div class="container text-white my-5 py-5">
-        <h2 class="text-center">Our services</h2>
+        <h2 class="text-center">Ou<span style="text-decoration-line: underline; text-decoration-color: #ffff; text-decoration-thickness: 5px; text-underline-offset: 10px;">r serv</span>ices</h2>
         <div class="row justify-content-center">
             <div class="col-12 col-md-4">
                 <div class="container containerku">

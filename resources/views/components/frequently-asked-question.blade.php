@@ -1,5 +1,5 @@
 <section class="FAQ">
-    <h2 class="text-center my-3">Frequently Asked Question</h2>
+    <h2 class="text-center my-3">Frequen<span style="text-decoration-line: underline; text-decoration-color: rgb(0, 73, 133); text-decoration-thickness: 5px; text-underline-offset: 20px;">tly Asked Que</span>stion</h2>
     <div class="container my-5">
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">

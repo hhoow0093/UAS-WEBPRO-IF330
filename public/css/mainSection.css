@@ -248,3 +248,8 @@
 .FAQ{
     min-height: 45vh;
 }
+
+.footer-seader{
+    background-color: rgb(222, 233, 242);
+    margin-bottom: 0;
+}
