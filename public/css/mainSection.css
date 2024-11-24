@@ -77,15 +77,9 @@
     height: 350px;
 }
 
-@media screen and (max-width:767px){
-    .containerku{
-        height: 250px;
-    }
-    
-}
 
 .infinite-scroll-section{
-    min-height: 60vh;
+    min-height: 40vh;
 }
 
 .wrapper-infinite-scroll{
@@ -141,4 +135,116 @@
     to{
         left: -450px;
     }
+}
+
+.item1, .item2, .item3, .item4, .item5{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.green-coffee-beans-arabica{
+    background-image: url('/img/green-coffee-beans.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    min-height: 60vh;
+    position: relative;
+    transition: transform 0.3s ease;
+
+}
+
+.green-coffee-beans-robusta{
+    background-image: url('/img/robusta-green-coffee.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    min-height: 60vh;
+    position:relative;
+    transition: transform 0.3s ease;
+}
+
+.green-coffee-beans-arabica::before{
+    content: '';
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.green-coffee-beans-robusta::before{
+    content: '';
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.featured-product-section{
+    background-color: #125A95;
+}
+
+.content-beans{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content-beans{
+    display: none;
+}
+
+.green-coffee-beans-arabica:hover .content-beans{
+    display: block;
+}
+
+.green-coffee-beans-arabica:hover {
+    transform: scale(1.05); 
+}
+
+.green-coffee-beans-robusta:hover {
+    transform: scale(1.05); 
+}
+
+.green-coffee-beans-robusta:hover .content-beans{
+    display: block;
+}
+
+.accordion-button:focus {
+    box-shadow: none; 
+    outline: none; 
+}
+
+.accordion-button:not(.collapsed) {
+    background-color:  rgb(9, 44, 73); 
+    color: white; 
+}
+
+.accordion-body{
+    background-color: #f8f8f8;
+}
+
+@media screen and (max-width:767px){
+    .containerku{
+        height: 250px;
+    }
+}
+
+.FAQ{
+    min-height: 45vh;
 }
