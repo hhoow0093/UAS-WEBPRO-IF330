@@ -1,5 +1,5 @@
-<section class="footer-seader">
-    <footer class="row py-5 my-5 border-top align-items-center p-4">
+<section class="footer-seader" style="overflow: hidden">
+    <footer class="row  border-top align-items-center p-4">
         <div class=" col-12 col-md-6 mb-3 ms-2">
               <img src="/img/color-seadex.webp" alt="seadex" height="75" width="200" class="mb-3">
           <h3 style="color: rgb(5, 89, 158);">Delivering Indonesia's Finest to the World.</h3>
