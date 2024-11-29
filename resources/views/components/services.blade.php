@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-4">
                 <div class="container containerku">
-                    <div class="borderku my-3 rounded-circle border border-4 d-flex justify-content-center align-items-center"
+                    <div class="borderku my-3 rounded-circle border-4 d-flex justify-content-center align-items-center"
                         style="width: 64px; height:64px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                             class="bi bi-briefcase-fill" viewBox="0 0 16 16">
@@ -29,7 +29,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="container containerku">
-                    <div class="borderku my-3 rounded-circle border border-4 d-flex justify-content-center align-items-center"
+                    <div class="borderku my-3 rounded-circle border-4 d-flex justify-content-center align-items-center"
                         style="width: 64px; height:64px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                             class="bi bi-people-fill" viewBox="0 0 16 16">
@@ -52,7 +52,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="container containerku">
-                    <div class="borderku my-3 rounded-circle border border-4 d-flex justify-content-center align-items-center"
+                    <div class="borderku my-3 rounded-circle border-4 d-flex justify-content-center align-items-center"
                         style="width: 64px; height:64px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                             class="bi bi-check2-circle" viewBox="0 0 16 16">
