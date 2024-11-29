@@ -54,11 +54,11 @@ body, html {
     padding-left: 1.5rem;
 }
 
-.about, #mission-vision, #values {
+ #about, #mission-vision, #values {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
-}
+} 
 
 @keyframes fadeInUp {
     from {
