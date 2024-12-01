@@ -1,8 +1,15 @@
 <x-layout>
+<<<<<<< HEAD
     <x-slot:title>About Us</x-slot:title>
 
     <x-navbar-main></x-navbar-main>
 
+=======
+    <link rel="stylesheet" href="/css/mainSection.css">
+    <x-slot:title>About Us</x-slot:title>
+    <x-navbar-tertiary></x-navbar-tertiary>
+    <x-navbar-secondary></x-navbar-secondary>
+>>>>>>> 23141b04ee2f2f534e1a97d008e7e55c843edaae
     <section id="about" class="about py-5 bg-light">
         <div class="container">
             <div class="row align-items-center">
@@ -116,4 +123,9 @@
             </div>
         </div>
     </section>
+<<<<<<< HEAD
+=======
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/mainSection.js"></script>
+>>>>>>> 23141b04ee2f2f534e1a97d008e7e55c843edaae
 </x-layout>
