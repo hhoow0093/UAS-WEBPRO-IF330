@@ -1,8 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.lora {
+    font-family: 'Lora', serif;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.merriweather {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+}
+
+.underline {
+    text-decoration-line: underline;
+    text-decoration-color: #fff;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 10px;
+}
 body {
     font-family: 'Roboto', sans-serif;
 }
+::-webkit-scrollbar {
+    display: none;
+    }
 
 @media (min-width: 992px) { 
     .navbar-nav .nav-link.navbar1 {
@@ -54,19 +85,17 @@ body, html {
     padding-left: 1.5rem;
 }
 
-<<<<<<< HEAD
 .about, #mission-vision, #values {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
 }
-=======
+
  #about, #mission-vision, #values {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
 } 
->>>>>>> 23141b04ee2f2f534e1a97d008e7e55c843edaae
 
 @keyframes fadeInUp {
     from {
@@ -150,4 +179,67 @@ body, html {
 #values .card:hover {
     transform: translateY(-10px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.card .card-body {
+    padding: 20px;
+}
+.borderku {
+    background-color: #e6f7fb;
+    border-color: #009bb3;
+}
+.borderku svg {
+    width: 40px;
+    height: 40px;
+}
+
+.btn-outline-primary {
+    border: 2px solid #009bb3;
+    color: #009bb3;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+.btn-outline-primary:hover {
+    background-color: #009bb3;
+    color: white;
+}
+
+#coffee-section {
+    background: linear-gradient(to bottom, #e6f7fb, #ffffff);
+}
+#supplements-section {
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+}
+#agriculture-section {
+    background: linear-gradient(to bottom, #f9f9f9, #e6f7fb);
+}
+
+@media (max-width: 768px) {
+    .borderku {
+        width: 48px;
+        height: 48px;
+    }
+    .borderku svg {
+        width: 24px;
+        height: 24px;
+    }
+    .card-title {
+        font-size: 1.2rem;
+    }
+    .card-text {
+        font-size: 0.9rem;
+    }
+}
+
+.card {
+    animation: fadeInUp 0.5s ease-in-out;
 }

@@ -1,20 +1,14 @@
 <x-layout>
-<<<<<<< HEAD
     <x-slot:title>About Us</x-slot:title>
-
-    <x-navbar-main></x-navbar-main>
-
-=======
     <link rel="stylesheet" href="/css/mainSection.css">
     <x-slot:title>About Us</x-slot:title>
     <x-navbar-tertiary></x-navbar-tertiary>
     <x-navbar-secondary></x-navbar-secondary>
->>>>>>> 23141b04ee2f2f534e1a97d008e7e55c843edaae
     <section id="about" class="about py-5 bg-light">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4">
-                    <h1 class="font-montserrat text-[40px] !important">About Us</h1>
+                    <h1 class="font-montserrat ]text-[40px !important">About Us</h1>
                     <p class="font-roboto text-[18px] text-muted lead">
                         At Seadex, we are dedicated to delivering the finest high-quality goods from Indonesia to the global market. 
                         Our commitment to sustainability and excellence is matched only by our focus on empowering local communities through fair trade practices and responsible sourcing. 
@@ -28,12 +22,11 @@
                     </p>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="{{ asset('img/about-us.jpg') }}" class="img-fluid rounded shadow" alt="About Us">
+                    <img src="{{ asset('img/Impor-Coffee.jpg') }}" class="img-fluid rounded shadow" alt="About Us">
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Mission and Vision Section -->
     <section id="mission-vision" class="py-5">
         <div class="container">
@@ -55,7 +48,6 @@
             </div>
         </div>
     </section>
-
     <!-- Company Values Section -->
     <section id="values" class="py-5 bg-light">
         <div class="container">
@@ -123,9 +115,6 @@
             </div>
         </div>
     </section>
-<<<<<<< HEAD
-=======
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/mainSection.js"></script>
->>>>>>> 23141b04ee2f2f534e1a97d008e7e55c843edaae
 </x-layout>
