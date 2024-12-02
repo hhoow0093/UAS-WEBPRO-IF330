@@ -1,5 +1,4 @@
 <x-layout>
-    <x-slot:title>About Us</x-slot:title>
     <link rel="stylesheet" href="/css/mainSection.css">
     <x-slot:title>About Us</x-slot:title>
     <x-navbar-tertiary></x-navbar-tertiary>
@@ -8,7 +7,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4">
-                    <h1 class="font-montserrat ]text-[40px !important">About Us</h1>
+                    <h1 class="font-montserrat text-[40px] !important">About Us</h1>
                     <p class="font-roboto text-[18px] text-muted lead">
                         At Seadex, we are dedicated to delivering the finest high-quality goods from Indonesia to the global market. 
                         Our commitment to sustainability and excellence is matched only by our focus on empowering local communities through fair trade practices and responsible sourcing. 
@@ -22,11 +21,12 @@
                     </p>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="{{ asset('img/Impor-Coffee.jpg') }}" class="img-fluid rounded shadow" alt="About Us">
+                    <img src="{{ asset('img/about-us.jpg') }}" class="img-fluid rounded shadow" alt="About Us">
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Mission and Vision Section -->
     <section id="mission-vision" class="py-5">
         <div class="container">
@@ -48,6 +48,7 @@
             </div>
         </div>
     </section>
+
     <!-- Company Values Section -->
     <section id="values" class="py-5 bg-light">
         <div class="container">
