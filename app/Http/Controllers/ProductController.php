@@ -96,4 +96,14 @@ class ProductController extends Controller
 
         return redirect('/seadex/products')->with('success', 'Product deleted successfully!');
     }
+
+    public function destroyCategory(Product $product, string $id)
+    {
+        $product = Category::findOrFail($id);
+        $product->delete();
+
+        return redirect('/seadex/products')->with('success', 'Category deleted successfully!');
+    }
+
 }
+

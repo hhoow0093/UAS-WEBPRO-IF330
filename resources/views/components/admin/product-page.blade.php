@@ -13,17 +13,18 @@
             <p class="text-center lead roboto">Premium Indonesian Commodities and Agricultural Exports</p>
         </div>
     </section>  
-    <div class="container mt-2 d-flex align-items-center">
-        <form method="POST" action="" class="d-flex align-items-center me-auto">
-            <input type="text" name="item_name" class="form-control me-2" placeholder="Search for items" >
-            <button type="submit" class="btn btn-success">Search</button>
-        </form>
-        <a href="/login" class="btn btn-primary me-2">Login</a>
-        <a href="/register" class="btn btn-secondary">Register</a>
-    </div>
-
-
-
+    <div class="container">
+        <input type="text" class="col-6 col-md-4">
+        <!-- Example single danger button -->
+        <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
 </div>
        
     </div>

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->boolean('role')->default(0);
+            $table->string('role')->default('user');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -48,3 +48,9 @@ return new class extends Migration
         Schema::dropIfExists('sessions');
     }
 };
+\App\Models\User::create([
+    'name' => 'test',
+    'email' => 'test@test.com',
+    'password' => bcrypt('testpass'),
+    'role' => 'user',
+]);
