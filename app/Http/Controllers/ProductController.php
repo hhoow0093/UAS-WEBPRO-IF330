@@ -48,16 +48,16 @@ class ProductController extends Controller
         $product->gambar = $path;
         $product->save();
 
-        return redirect('/seadex/products')->with('success', 'Product created successfully!');
+        return redirect(route('admin.products'))->with('success', 'Product created successfully!');
     }
 
-    public function show(Product $product, string $id)
-    {
-        $product = Product::findOrFail($id);
-        $gambar = Storage::url($product->gambar);
+    // public function show(Product $product, string $id)
+    // {
+    //     $product = Product::findOrFail($id);
+    //     $gambar = Storage::url($product->gambar);
 
-        return view('products.show', ['product' => $product, 'gambar' => $gambar]);
-    }
+    //     return view('products.show', ['product' => $product, 'gambar' => $gambar]);
+    // }
 
     public function edit(Product $product, string $id)
     {
@@ -86,7 +86,7 @@ class ProductController extends Controller
         $product->featured = $request->featured;
         $product->save();
 
-        return redirect('/seadex/products')->with('success', 'Product updated successfully!');
+        return redirect(route('admin.products'))->with('success', 'Product updated successfully!');
     }
 
     public function destroy(Product $product, string $id)
@@ -94,6 +94,29 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
 
-        return redirect('/seadex/products')->with('success', 'Product deleted successfully!');
+        return redirect(route('admin.products'))->with('success', 'Product deleted successfully!');
     }
+
+    public function destroyCategory(Product $product, string $id)
+    {
+        $product = Category::findOrFail($id);
+        $product->delete();
+
+        return redirect(route('admin.products'))->with('success', 'Category deleted successfully!');
+    }
+
+    public function toggleInterest(Product $product)
+{
+    $user = auth()->user();
+
+    if ($user->products->contains($product->id)) {
+        $user->products()->detach($product->id); // Remove the relation
+    } else {
+        $user->products()->attach($product->id); // Add the relation
+    }
+
+    return back()->with('success', 'Product interest updated!');
 }
+
+}
+

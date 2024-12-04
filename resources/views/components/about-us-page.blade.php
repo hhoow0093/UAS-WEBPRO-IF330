@@ -8,13 +8,13 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4">
                     <h1 class="font-montserrat text-[40px] !important">About Us</h1>
-                    <p class="font-roboto text-[18px] text-muted lead">
+                    <p class="font-roboto text-[18px] text-muted lead" style="text-align: justify;">
                         At Seadex, we are dedicated to delivering the finest high-quality goods from Indonesia to the global market. 
                         Our commitment to sustainability and excellence is matched only by our focus on empowering local communities through fair trade practices and responsible sourcing. 
                         We strive to create a transparent platform where buyers can easily find trusted and reliable sources of exceptional products without the risk of fraudulent activities, 
                         ensuring that every partnership is built on integrity and quality.
                     </p>
-                    <p class="font-roboto text-[18px] text-muted lead">
+                    <p class="font-roboto text-[18px] text-muted lead" style="text-align: justify;">
                         We take full accountability for our operations, recognizing the impact of our decisions on our stakeholders and the environment. 
                         By adhering to the highest standards of ethical conduct, we aim to foster lasting relationships that prioritize the success and growth of our customers and the communities we serve. 
                         At Seadex, we believe that accountability is not just a principle; it is the foundation of trust that enables us to excel in our mission of providing exceptional products and services.
