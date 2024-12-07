@@ -20,7 +20,6 @@ Route::controller(Seadex::class)->group(function(){
     Route::get('/seadex/products', 'product');
     Route::post('/products/{product}/interested', [ProductController::class, 'toggleInterest'])->name('product.interested');
     Route::get('/seadex/contactus', 'contact');
-    Route::get('/seadex/articles', 'article');
 });
 
 // Admin Routes

@@ -28,10 +28,6 @@ class Seadex extends Controller
         return view('components.contact-us-page');
     }
 
-    public function article()
-    {
-        return view('components.articles-page');
-    }
 
     public function about()
     {

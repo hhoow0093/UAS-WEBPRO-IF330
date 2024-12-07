@@ -37,9 +37,6 @@
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
                     <a class="nav-link navbar2  active fw-bold"  href="/seadex/contactus">Contact us</a>
                 </li>
-                <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link navbar2  active fw-bold"  href="/seadex/articles">Articles</a>
-                </li>
             </ul>
         </div>
     </div>
