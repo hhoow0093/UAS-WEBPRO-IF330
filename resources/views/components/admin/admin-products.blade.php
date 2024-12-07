@@ -32,7 +32,7 @@
             <input type="text" name="item_name" class="form-control me-2" placeholder="Search for items" >
             <button type="submit" class="btn btn-success">Search</button>
         </form>
-        <form method="POST" action="{{ route('logout') }}" class="d-inline">
+        <form method="GET" action="{{ route('logout') }}" class="d-inline">
             @csrf
             <button type="submit" class="btn btn-link text-decoration-none">Logout</button>
         </form>

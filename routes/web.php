@@ -19,7 +19,8 @@ Route::controller(Seadex::class)->group(function(){
     Route::get('/seadex/aboutus', 'about');
     Route::get('/seadex/products', 'product');
     Route::post('/products/{product}/interested', [ProductController::class, 'toggleInterest'])->name('product.interested');
-    Route::get('/seadex/contactus', 'contact');
+    Route::get('/seadex/contactus', 'showForm')->name('contact.form');
+    Route::post('/seadex/contactus', 'submitForm')->name('contact.submit');
 });
 
 // Admin Routes
@@ -45,5 +46,5 @@ Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [UserController::class, 'login'])->name('login-post');
 Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [UserController::class, 'register'])->name('register-post');
-Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
