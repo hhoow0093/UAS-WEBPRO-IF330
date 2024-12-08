@@ -27,13 +27,19 @@
     text-decoration-color: #fff;
     text-decoration-thickness: 5px;
     text-underline-offset: 10px;
+    font-size: 18px;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
+
 ::-webkit-scrollbar {
     display: none;
-    }
+}
 
 @media (min-width: 992px) { 
     .navbar-nav .nav-link.navbar1 {
@@ -57,12 +63,6 @@ body {
     cursor: pointer;
     color: #009bb3 !important;
     transition: color 0.3s ease;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
 }
 
 .button {
@@ -90,12 +90,6 @@ body, html {
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
 }
-
- #about, #mission-vision, #values {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
-} 
 
 @keyframes fadeInUp {
     from {
@@ -128,9 +122,11 @@ body, html {
 .about h1 {
     color: #125A95 !important; 
 }
+
 .about p {
     color: #333333 !important; 
 }
+
 .about {
     padding: 2rem 1rem;
 }
@@ -146,9 +142,89 @@ body, html {
 }
 
 #values {
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(to bottom, #f9f9f9, #ffffff);
     padding: 2rem;
     border-radius: 10px;
+}
+
+#values::before,
+#values::after {
+    content: "";
+    position: absolute;
+    left: -50%;
+    width: 200%;
+    height: 120px;
+    background-color: rgba(0, 155, 179, 0.2);
+    bottom: -60px;
+    border-radius: 45%;
+    animation: wave 20s linear infinite;
+    z-index: 1;
+}
+
+#values::before {
+    background-color: rgba(0, 155, 179, 0.3);
+    animation-delay: -10s;
+    height: 140px;
+    bottom: -70px;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0) rotate(0deg);
+        clip-path: polygon(
+            0 60%, 
+            10% 52%, 
+            20% 59%, 
+            30% 54%, 
+            40% 60%, 
+            50% 55%, 
+            60% 61%, 
+            70% 56%, 
+            80% 59%, 
+            90% 54%, 
+            100% 60%, 
+            100% 100%, 
+            0 100%
+        );
+    }
+    50% {
+        transform: translateX(-25%) rotate(180deg);
+        clip-path: polygon(
+            0 64%, 
+            10% 57%, 
+            20% 63%, 
+            30% 58%, 
+            40% 64%, 
+            50% 59%, 
+            60% 65%, 
+            70% 60%, 
+            80% 63%, 
+            90% 58%, 
+            100% 64%, 
+            100% 100%, 
+            0 100%
+        );
+    }
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+        clip-path: polygon(
+            0 60%, 
+            10% 52%, 
+            20% 59%, 
+            30% 54%, 
+            40% 60%, 
+            50% 55%, 
+            60% 61%, 
+            70% 56%, 
+            80% 59%, 
+            90% 54%, 
+            100% 60%, 
+            100% 100%, 
+            0 100%
+        );
+    }
 }
 
 #mission-vision h2 {
@@ -185,17 +261,21 @@ body, html {
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
+
 .card .card-body {
     padding: 20px;
 }
+
 .borderku {
     background-color: #e6f7fb;
     border-color: #009bb3;
 }
+
 .borderku svg {
     width: 40px;
     height: 40px;
@@ -208,6 +288,7 @@ body, html {
     padding: 10px 20px;
     transition: all 0.3s ease;
 }
+
 .btn-outline-primary:hover {
     background-color: #009bb3;
     color: white;
@@ -216,9 +297,11 @@ body, html {
 #coffee-section {
     background: linear-gradient(to bottom, #e6f7fb, #ffffff);
 }
+
 #supplements-section {
     background: linear-gradient(to bottom, #ffffff, #f9f9f9);
 }
+
 #agriculture-section {
     background: linear-gradient(to bottom, #f9f9f9, #e6f7fb);
 }
@@ -242,4 +325,9 @@ body, html {
 
 .card {
     animation: fadeInUp 0.5s ease-in-out;
+}
+
+#mission-vision, #values {
+    animation: fadeInUp 1s ease-in-out;
+    opacity: 1;
 }

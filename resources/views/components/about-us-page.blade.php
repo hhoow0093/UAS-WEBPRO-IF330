@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4">
-                    <h1 class="font-montserrat ]text-[40px !important">About Us</h1>
+                    <h1 class="font-montserrat text-[40px !important]">About Us</h1>
                     <p class="font-roboto text-[18px] text-muted lead">
                         At Seadex, we are dedicated to delivering the finest high-quality goods from Indonesia to the global market. 
                         Our commitment to sustainability and excellence is matched only by our focus on empowering local communities through fair trade practices and responsible sourcing. 
@@ -49,7 +49,9 @@
         </div>
     </section>
     <!-- Company Values Section -->
-    <section id="values" class="py-5 bg-light">
+    <section id="values" class="py-5 bg-light position-relative">
+        <!-- Added Waves Background -->
+        <div class="waves-background"></div>
         <div class="container">
             <div class="text-center mb-4">
                 <h2 class="font-montserrat text-[35px]">Our Company Values</h2>
