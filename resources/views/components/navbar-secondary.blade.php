@@ -37,9 +37,19 @@
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
                     <a class="nav-link navbar2  active fw-bold"  href="/seadex/contactus">Contact us</a>
                 </li>
+                @guest
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link navbar2  active fw-bold"  href="/seadex/articles">Articles</a>
+                    <a href="{{ route('login') }}" class="nav-link navbar2 active fw-bold">Login</a>
                 </li>
+                <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+                    <a href="{{ route('register') }}" class="nav-link navbar2 active fw-bold text-black">Register</a>
+                </li>
+            @endguest
+            @auth
+                <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+                    <a href="{{ route('logout') }}" class="nav-link navbar2 active fw-bold text-black">Logout</a>
+                </li>
+            @endauth
             </ul>
         </div>
     </div>

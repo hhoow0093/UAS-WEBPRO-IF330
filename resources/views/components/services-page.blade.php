@@ -1,9 +1,8 @@
 <x-layout>
     <x-slot:title>Our Services</x-slot:title>
-
-    <x-navbar-main></x-navbar-main>
-
-    <!-- High-Quality Product Sourcing Section -->
+    <link rel="stylesheet" href="/css/mainSection.css">
+    <x-navbar-tertiary></x-navbar-tertiary>
+    <x-navbar-secondary></x-navbar-secondary>
     <section id="product-sourcing" class="about py-5 bg-light">
         <div class="container">
             <div class="row align-items-center">
@@ -62,4 +61,6 @@
         </div>
     </div>
  </section>
+ <script src="/js/jquery-3.7.1.min.js"></script>
+ <script src="/js/mainSection.js"></script>
 </x-layout>

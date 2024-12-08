@@ -1,11 +1,12 @@
+
 <section class= "servicesHome mt-3">
     <div class="container text-white my-5 py-5">
         <h2 class="text-center">Ou<span style="text-decoration-line: underline; text-decoration-color: #ffff; text-decoration-thickness: 5px; text-underline-offset: 10px;">r serv</span>ices</h2>
         <div class="row justify-content-center">
             <div class="col-12 col-md-4">
                 <div class="container containerku">
-                    <div class="borderku my-3 rounded-circle border-4 d-flex justify-content-center align-items-center"
-                        style="width: 64px; height:64px;">
+                    <div class="borderku my-3 rounded-circle border-4 d-flex justify-content-center align-items-center "
+                        style="width: 64px; height:64px; background-color:#092C49">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                             class="bi bi-briefcase-fill" viewBox="0 0 16 16">
                             <path
@@ -30,7 +31,7 @@
             <div class="col-12 col-md-4">
                 <div class="container containerku">
                     <div class="borderku my-3 rounded-circle border-4 d-flex justify-content-center align-items-center"
-                        style="width: 64px; height:64px;">
+                        style="width: 64px; height:64px; background-color:#092C49">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                             class="bi bi-people-fill" viewBox="0 0 16 16">
                             <path
@@ -53,7 +54,7 @@
             <div class="col-12 col-md-4">
                 <div class="container containerku">
                     <div class="borderku my-3 rounded-circle border-4 d-flex justify-content-center align-items-center"
-                        style="width: 64px; height:64px;">
+                        style="width: 64px; height:64px; background-color:#092C49">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                             class="bi bi-check2-circle" viewBox="0 0 16 16">
                             <path

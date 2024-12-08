@@ -45,4 +45,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'product_user')->withTimestamps();
+    }
 }
+

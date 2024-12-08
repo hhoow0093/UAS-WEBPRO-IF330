@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactUsMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class Seadex extends Controller
 {
@@ -23,67 +25,33 @@ class Seadex extends Controller
         return view('components.product-page');
     }
 
-    public function contact()
+    public function showForm()
     {
         return view('components.contact-us-page');
     }
 
-    public function article()
+    public function submitForm(Request $request)
     {
-        return view('components.articles-page');
+        {
+            // Validasi input
+            $validated = $request->validate([
+                'name' => 'required|max:255',
+                'email' => 'required|email',
+                'subject' => 'required|max:255',
+                'message' => 'required',
+            ]);
+    
+            // Kirim email ke perusahaan menggunakan ContactUsMail
+            Mail::to('perusahaan@example.com')->send(new ContactUsMail($validated));
+    
+            // Beri pesan sukses dan redirect ke halaman form kontak
+            return view('components.contact-us-page')->with('success', 'Pesan Anda berhasil dikirim!');
+        }
     }
+
 
     public function about()
     {
         return view('components.about-us-page');
-    }
-    
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }
