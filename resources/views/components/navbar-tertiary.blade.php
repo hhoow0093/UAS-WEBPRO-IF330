@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg py-4 py-lg-0" >
-    <div class="container-fluid px-4" style="background-color:white; min-height:10vh">
+    <div class="container-fluid px-4" style="background-color:white; min-height:10vh; position: relative; z-index:5;">
         <img src="/img/color-seadex.webp" alt="seadex" height="50" width="170">
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#top-navbar"
             aria-controls="top-navbar">
