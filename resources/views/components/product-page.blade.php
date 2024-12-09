@@ -15,15 +15,15 @@
     </section>  
 
     <div class="container mt-2 d-flex align-items-center">
-    <form method="GET" action="{{ url()->current() }}" class="d-flex align-items-center me-auto p-3 rounded shadow-sm">
+    <form method="GET" action="{{ url()->current() }}" class="d-flex align-items-center me-auto p-3">
         <input 
             type="text" 
             name="product_name" 
-            class="form-control me-2 border border-success rounded-pill" 
+            class="form-control me-2 border border-success " 
             placeholder="Search for products" 
             value="{{ request('product_name') }}" 
             style="max-width: 300px; padding: 0.5rem;">
-        <button type="submit" class="btn btn-success px-4 py-2 rounded-pill">Search</button>
+        <button type="submit" class="btn btn-success px-4 py-2 ">Search</button>
     </form>
     </div>
     
@@ -103,3 +103,4 @@
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/mainSection.js"></script>
 </x-layout>
+<x-footer></x-footer>

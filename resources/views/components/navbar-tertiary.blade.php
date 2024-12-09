@@ -29,7 +29,7 @@
                     <a class="nav-link navbar2  active fw-bold"  href="/seadex/services">Services</a>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link navbar2  active fw-bold"  href="/seadex/products">Product</a>
+                    <a class="nav-link navbar2  active fw-bold"  href="/seadex/products">Products</a>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
                     <a class="nav-link navbar2  active fw-bold" href="/seadex/aboutus">About us</a>
