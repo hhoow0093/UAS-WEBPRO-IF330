@@ -5,7 +5,7 @@
     <x-modals.alert />
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="/">MyApp</a>
+        <a class="navbar-brand" href="/">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,39 +31,23 @@
         </div>
     </section>  
     <div class="container mt-2 d-flex align-items-center">
-        <form method="POST" action="" class="d-flex align-items-center me-auto">
-            <input type="text" name="item_name" class="form-control me-2" placeholder="Search for items" >
-            <button type="submit" class="btn btn-success">Search</button>
-        </form>
-        <form method="GET" action="{{ route('logout') }}" class="d-inline">
-            @csrf
-            <button type="submit" class="btn btn-link text-decoration-none">Logout</button>
-        </form>
     </div>
 
-
-
-</div>
-       
+    </div>
     </div>
     <section class="product-categories my-5">
         <div class="container">
             <div class="row justify-content-around">
+                <h3 class="text-align-center">Categories</h3>
                 @foreach($categories as $category)
                     <div class="col-12 col-md-4 mb-4">
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body text-center">
-                                <div class="borderku my-3 mx-auto rounded-circle border-4 d-flex justify-content-center align-items-center"
-                                    style="width: 64px; height:64px;">
-                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                        class="bi bi-folder" viewBox="0 0 16 16">
-                                        <path d="M1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13ZM1 2.5A1.5 1.5 0 0 1 2.5 1h2a.5.5 0 0 1 .4.2L6.8 3h7.7a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 14.5 15h-13A1.5 1.5 0 0 1 0 13.5v-9Z" />
-                                    </svg> -->
-                                </div>
-                                <h4 class="card-title font-semiboldlora text-[35px]">{{ $category->name }}</h4>
-                                <div class="inline-block">
-                                    <a href="#{{ $category->name  }}-section" class="scroll-link btn btn-outline-primary">View {{ ucfirst($category->name) }}</a>
-                                </div>
+                                @if($category->image)
+                                    <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" class="img-fluid rounded mb-3" style="height: 150px; object-fit: cover;">
+                                @endif
+                                <h4 class="card-title">{{ $category->name }}</h4>
+                                <a href="#{{ $category->name }}-section" class="btn btn-outline-primary">View {{ ucfirst($category->name) }}</a>
                                 <form action="deleteCategory/{{ $category->id }}" method="POST" class="pt-2">
                                     @csrf
                                     @method('DELETE')
@@ -95,22 +79,21 @@
                     @forelse($category->products as $product)
                     
                     <div class="col-12 col-md-6">
-                        <a href="/seadex/products/{{$product->id}}" class="href">
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h4 class="card-title font-semiboldlora text-[35px]">{{ $product->nama }}</h4>
-                                    <p class="card-text roboto text-[18px]">{{ $product->deskripsi }}</p>
-                                    <a href="/seadex/products/{{ $product->id }}/edit" class="btn btn-sm btn-outline-secondary">
-                                        Edit
-                                    </a>
-                                    <form action="/seadex/products/{{ $product->id }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type="submit" class="btn btn-sm btn-outline-danger" value="Delete">
-                                    </form>
-                                </div>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <img src="{{ asset('storage/' . $product->gambar) }}" alt="{{ $product->nama }}" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+                                <h4 class="card-title font-semiboldlora text-[35px]">{{ $product->nama }}</h4>
+                                <p class="card-text roboto text-[18px]">{{ $product->deskripsi }}</p>
+                                <a href="/seadex/products/{{ $product->id }}/edit" class="btn btn-sm btn-outline-secondary">
+                                    Edit
+                                </a>
+                                <form action="/seadex/products/{{ $product->id }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="submit" class="btn btn-sm btn-outline-danger" value="Delete">
+                                </form>
                             </div>
-                        </a>
+                        </div>
                     </div>
                     
                     @empty

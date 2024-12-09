@@ -44,6 +44,9 @@
                         <div class="col-12 col-md-4 mb-4">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body text-center">
+                                    @if($category->image)
+                                        <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" class="img-fluid rounded mb-3" style="height: 150px; object-fit: cover;">
+                                    @endif
                                     <h4 class="card-title">{{ $category->name }}</h4>
                                     <a href="#{{ $category->name }}-section" class="scroll-link btn btn-outline-primary">View {{ ucfirst($category->name) }}</a>
                                 </div>
@@ -60,7 +63,7 @@
             <section id="{{ $category->name }}-section" class="bg-light py-5">
                 <div class="container">
                     <h2 class="text-center mb-4" style="color: rgb(5, 89, 158);">
-                        {{ ucfirst($category->name) }} Products
+                        {{ ucfirst($category->name) }} 
                     </h2>
 
                     <div class="row justify-content-around">
@@ -68,6 +71,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="card mb-4">
                                     <div class="card-body">
+                                        <img src="{{ asset('storage/' . $product->gambar) }}" alt="{{ $product->nama }}" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
                                         <h4 class="card-title">{{ $product->nama }}</h4>
                                         <p class="card-text">{{ $product->deskripsi }}</p>
                                         

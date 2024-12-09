@@ -7,11 +7,15 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('categories.store') }}" method="POST">
+                <form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="categoryName" class="form-label">Category Name</label>
                         <input type="text" class="form-control" id="categoryName" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="categoryImage" class="form-label">Category Image</label>
+                        <input type="file" class="form-control" id="categoryImage" name="image" accept="image/*">
                     </div>
                     <button type="submit" class="btn btn-primary">Create</button>
                 </form>
