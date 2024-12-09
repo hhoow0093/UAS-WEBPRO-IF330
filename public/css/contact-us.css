@@ -1,0 +1,169 @@
+.background {
+    background-image: url('/img/business-contact-us.jpg');
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    min-height: 60vh;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.section {
+    max-height: 100vh;
+}
+
+.background::before {
+    content: '';
+    background-color: rgba(0, 32, 95, 0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.background::after {
+    content: '';
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(114, 189, 255, 0) 50%, rgba(34, 52, 187, 0.5) 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.background>* {
+    position: relative;
+    z-index: 2;
+}
+
+.cardsa {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    gap: 40px;
+    position: relative;
+    justify-content: center;
+    z-index: 2;
+    transform: translateY(-150%);
+}
+
+.carda {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 375px;
+    width: 500px;
+}
+
+#explore{
+    font-size: 3rem;;
+}
+#want{
+    font-size: 1rem;;
+
+}
+
+.blue{
+    color: #0D426E;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.blue.italic{
+    font-style: italic;
+    font-weight: 300;
+}
+
+.word{
+    font-size: 20px;
+}
+
+@media (max-width: 1039px) {
+    .cardsa {
+        transform: translateY(-70%);
+    }
+
+    .section {
+        max-height: 135vh;
+    }
+
+    #explore{
+        font-size: 2rem;
+
+    }
+    #want{
+        font-size: 1rem;
+    }
+
+}
+
+
+.carda>* {
+    margin-top: 20px;
+}
+
+.button {
+    border: none;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    z-index: 1;
+    min-height: 30vh;
+}
+
+.content {
+    position: relative;
+    z-index: 3;
+}
+
+.wave-container {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.wave-container svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 10vh;
+}
+
+.wave-container path {
+    transition: d 1s ease-in-out;
+}
+
+.button-dark {
+    background-color: #0e72c4;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    border: none;
+    width: 5rem;
+}
+
+.button-dark:hover {
+    background-color: #092C49;;
+    cursor: pointer;
+}

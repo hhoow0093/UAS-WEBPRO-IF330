@@ -87,6 +87,7 @@
             </section>
         @endif
     @endforeach
+    <x-footer></x-footer>
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/mainSection.js"></script>
 </x-layout>

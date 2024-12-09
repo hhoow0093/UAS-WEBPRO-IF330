@@ -1,7 +1,7 @@
-<section class="footer-seader" style="overflow: hidden">
+<section class="footer-seader" style="overflow: hidden; margin-top:50px">
     <footer class="row  border-top align-items-center p-4">
         <div class=" col-12 col-md-6 mb-3 ms-2">
-              <img src="/img/color-seadex.webp" alt="seadex" height="75" width="200" class="mb-3">
+              <img src="/img/color-seadex.webp" alt="seadex" height="75" width="225" class="mb-3">
           <h3 style="color: rgb(5, 89, 158);">Delivering Indonesia's Finest to the World.</h3>
           <p><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
             <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
@@ -27,7 +27,6 @@
             <li class="nav-item mb-2"><a href="/seadex/products" class="nav-link p-0 text-body-secondary">Product</a></li>
             <li class="nav-item mb-2"><a href="/seadex/aboutus" class="nav-link p-0 text-body-secondary">About us</a></li>
             <li class="nav-item mb-2"><a href="/seadex/contactus" class="nav-link p-0 text-body-secondary">Contact us</a></li>
-            <li class="nav-item mb-2"><a href="/seadex/articles" class="nav-link p-0 text-body-secondary">Articles</a></li>
           </ul>
         </div>
     

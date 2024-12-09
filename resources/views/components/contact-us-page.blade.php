@@ -1,124 +1,39 @@
 <x-layout>
     <link rel="stylesheet" href="/css/mainSection.css">
     <link rel="stylesheet" href="/css/style.css">
-    <style>
-        .background {
-            background-image: url('/img/business-contact-us.jpg');
-            background-size: cover;
-            position: relative;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            min-height: 50vh ;
-            /* Ensure content doesn't overflow */
-        }
-
-        .background::before {
-            content: '';
-            background-color: rgba(0, 32, 95, 0.4);
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-
-        .background::after {
-            content: '';
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(114, 189, 255, 0) 50%, rgba(0, 9, 79, 0.5) 100%);
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 2;
-        }
-
-        .background>* {
-            position: relative;
-            z-index: 2;
-        }
-
-        .cardsa {
-            display: flex;
-            flex: 1 1 auto;
-            flex-wrap: wrap;
-            gap: 40px;
-            position: relative;
-            justify-content: center;
-            z-index: 2;
-            transform: translateY(-30%);
-        }
-
-        .carda {
-            background: white;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            min-width: 375px;
-            width: 500px;
-        }
-
-        @media (max-width: 1039px) {
-            .cardsa {
-                transform: translateY(-10%);
-            }
-
-        }
-
-        .carda>* {
-            margin-top: 20px;
-        }
-
-        .button {
-            border: none;
-        }
-
-        .wave {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-            z-index: 1;
-        }
-
-        .content {
-            position: relative;
-            z-index: 3;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/contact-us.css">
     <x-slot:title>Halaman Contact us</x-slot:title>
     <x-navbar-tertiary></x-navbar-tertiary>
     <x-navbar-secondary></x-navbar-secondary>
     <section class="section">
         <div class="background">
             <div class="content">
-                <h2>Let's Explore New Opportunity Together!</h2>
-                <h4>Want to get in touch? We'd Love to hear from you. Here's how you can reach us</h4>
+                <h2 class="fw-bold" id="explore">Let's Explore New Opportunity Together!</h2>
+                <h4  id="want">Want to get in touch? We'd Love to hear from you. Here's how you can reach us</h4>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave"  preserveAspectRatio="none">
                 <path fill="#f3f4f5" fill-opacity="0.1"
                     d="M0,32L24,69.3C48,107,96,181,144,202.7C192,224,240,192,288,192C336,192,384,224,432,224C480,224,528,192,576,160C624,128,672,96,720,80C768,64,816,64,864,80C912,96,960,128,1008,133.3C1056,139,1104,117,1152,128C1200,139,1248,181,1296,170.7C1344,160,1392,96,1416,64L1440,32L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z">
                 </path>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave"  preserveAspectRatio="none">
                 <path fill="#f3f4f5" fill-opacity="0.1"
                     d="M0,64L24,69.3C48,75,96,85,144,90.7C192,96,240,96,288,85.3C336,75,384,53,432,85.3C480,117,528,203,576,213.3C624,224,672,160,720,112C768,64,816,32,864,16C912,0,960,0,1008,32C1056,64,1104,128,1152,170.7C1200,213,1248,235,1296,256C1344,277,1392,299,1416,309.3L1440,320L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z">
                 </path>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave"  preserveAspectRatio="none">
                 <path fill="#f3f4f5" fill-opacity="0.1"
                     d="M0,288L24,250.7C48,213,96,139,144,106.7C192,75,240,85,288,80C336,75,384,53,432,58.7C480,64,528,96,576,106.7C624,117,672,107,720,101.3C768,96,816,96,864,117.3C912,139,960,181,1008,165.3C1056,149,1104,75,1152,37.3C1200,0,1248,0,1296,26.7C1344,53,1392,107,1416,133.3L1440,160L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z">
                 </path>
             </svg>
 
+        </div>
+        <div class="wave-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"  preserveAspectRatio="none">
+                <path fill="#f3f4f5" fill-opacity="0.9" 
+                    d="M0,96L48,106.7C96,117,192,139,288,160C384,181,480,203,576,202.7C672,203,768,181,864,197.3C960,213,1056,267,1152,272C1248,277,1344,235,1392,213.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+                </path>
+            </svg>
         </div>
         <div class="cardsa">
             <div class="carda">
@@ -147,91 +62,121 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6" style="line-height: 50px;">
-                    <h2>How We Can Help you:</h2>
-                    <h3>Quick Support</h3>
-                    <p>Get answers to your inquiries promptly.</p>
-                    <h3>Custom Solutions</h3>
-                    <p>Tailored sourcing and logistics for your business..</p>
-                    <h3>Trusted Guidance</h3>
-                    <p>Expertise in Indonesian exports.</p>
-                    <h2>How We Can Help you:</h2>
-                    <h3>Quick Support</h3>
-                    <p>Get answers to your inquiries promptly.</p>
-                    <h3>Custom Solutions</h3>
-                    <p>Tailored sourcing and logistics for your business..</p>
-                    <h3>Trusted Guidance</h3>
-                    <p>Expertise in Indonesian exports.</p>
+                    <div class="container">
+                        <div class="pertama">
+                            <h2 class="blue">How We Can Help you:</h2>
+                            <h3 class="blue italic">Quick Support</h3>
+                            <p class="word">Get answers to your inquiries promptly.</p>
+                            <h3 class="blue italic">Custom Solutions</h3>
+                            <p class="word">Tailored sourcing and logistics for your business..</p>
+                            <h3 class="blue italic">Trusted Guidance</h3>
+                            <p class="word">Expertise in Indonesian exports.</p>
+                        </div>
+                        <div class="kedua" style="margin-top: 50px">
+                            <h2 class="blue">How We Can Help you:</h2>
+                            <h3 class="blue italic">Quick Support</h3>
+                            <p class="word">Get answers to your inquiries promptly.</p>
+                            <h3 class="blue italic">Custom Solutions</h3>
+                            <p class="word">Tailored sourcing and logistics for your business..</p>
+                            <h3 class="blue italic">Trusted Guidance</h3>
+                            <p class="word">Expertise in Indonesian exports.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <form action="" method="POST">
+                <div class="col-12 col-md-6 d-flex align-items-center justify-content-center gap-2">
+                    <form action="" method="POST" class="container-fluid">
                         @csrf
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group mt-3">
+                                    <label for="name" class="fw-bold">Name <span style="color: red;">*</span></label>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        value="{{ old('name') }}" required>
                                     @error('name')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
+                            <div class=" col-12 col-md-6">
+                                <div class="form-group mt-3">
+                                    <label for="email" class="fw-bold">Email Adress <span style="color: red;">*</span></label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        value="{{ old('email') }}" required>
                                     @error('email')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
                         </div>
-            
-                        <div class="form-group">
-                            <label for="subject">Subjek</label>
-                            <input type="text" class="form-control" id="subject" name="subject" value="{{ old('subject') }}" required>
-                            @error('subject')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-            
-                        <div class="form-group">
-                            <label for="message">Pesan</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required>{{ old('message') }}</textarea>
-                            @error('message')
+
+                        <div class="form-group mt-3">
+                            <label for="company-name" class="fw-bold">Company name <span style="color: red;">*</span></label>
+                            <input type="text" class="form-control" id="company-name" name="company-name"
+                                value="{{ old('company-name') }}" required>
+                            @error('company-name')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="message">Pesan</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required>{{ old('message') }}</textarea>
-                            @error('message')
+                        <div class="form-group mt-3">
+                            <label for="phone-number" class="fw-bold">Phone Number <span style="color: red;">*</span></label>
+                            <input type="text" name="phone-number" id="phone-number" class="form-control" required>
+                            @error('phone-number')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="message">Pesan</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required>{{ old('message') }}</textarea>
-                            @error('message')
+                        <div class="form-group mt-3">
+                            <label for="country" class="fw-bold">Country <span style="color: red;">*</span></label>
+                            <select name="country" id="country" class="form-select" aria-label="Default select example">
+                                <option value="Australia">Australia</option>
+                                <option value="China">China</option>
+                                <option value="Germany">Germany</option>
+                                <option value="India">India</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="NetherLands">NetherLands</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="South-Korea">South-Korea</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="United-Arab-Emirates">United-Arab-Emirates</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="United States">United States</option>
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Other-country" selected>Other-country</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="inquiry-type" class="fw-bold">Inquiry Type <span style="color: red;">*</span></label>
+                            <select name="inquiry-type" id="inquiry-type" class="form-select" aria-label="Default select example">
+                                <option value="Product-Information">Product-Information</option>
+                                <option value="Product-Pricing">Product-Pricing</option>
+                                <option value="Shipping-Logistics">Shipping-Logistics</option>
+                                <option value="PartnerShip-Opportunities">PartnerShip-Opportunities</option>
+                                <option value="Others" selected>Others</option>
+                            </select>
+                        </div>
+                    
+
+                        <div class="form-group mt-3">
+                            <label for="inquiry-details" class="fw-bold">Inquiry-details <span style="color: red;">*</span></label>
+                            <textarea class="form-control" id="inquiry-details" name="inquiry-details" rows="4" required>{{ old('inquiry-details') }}</textarea>
+                            @error('inquiry-details')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="message">Pesan</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required>{{ old('message') }}</textarea>
-                            @error('message')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-            
-                        <button type="submit" class="btn btn-primary contact-btn mt-3">Kirim Pesan</button>
+
+                        <button type="submit" class="button-dark contact-btn mt-3">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+    <x-footer></x-footer>
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/mainSection.js"></script>
+    <script src="/js/contact-us.js"></script>
 </x-layout>
