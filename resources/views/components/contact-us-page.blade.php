@@ -180,3 +180,4 @@
     <script src="/js/mainSection.js"></script>
     <script src="/js/contact-us.js"></script>
 </x-layout>
+<x-footer></x-footer>

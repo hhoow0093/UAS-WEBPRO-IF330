@@ -10,8 +10,8 @@
                             Discover high-quality, sustainably sourced products with the assurance of full transparency and trusted, reliable partnerships
                         </p>
                     </div>
-                    <button type="button" class="btn btn-outline-light">Contact us</button>
-                    <button type="button" class="blue-button">Explore more</button>
+                    <a href="/seadex/contactus" class="href"><button type="button" class="btn btn-outline-light">Contact us</button></a>
+                    <a href="/seadex/home#pengantar-singkat" class="href"><button type="button" class="blue-button">Explore more</button></a>
                 </div>
                 <div class=" col-12 col-md-6 px-lg-0">
                 </div>

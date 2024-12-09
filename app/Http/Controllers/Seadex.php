@@ -41,11 +41,6 @@ class Seadex extends Controller
                 'message' => 'required',
             ]);
     
-            // Kirim email ke perusahaan menggunakan ContactUsMail
-            Mail::to('perusahaan@example.com')->send(new ContactUsMail($validated));
-    
-            // Beri pesan sukses dan redirect ke halaman form kontak
-            return view('components.contact-us-page')->with('success', 'Pesan Anda berhasil dikirim!');
         }
     }
 
