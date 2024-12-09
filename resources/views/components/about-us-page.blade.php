@@ -28,35 +28,34 @@
     </section>
 
     <!-- Mission and Vision Section -->
-    <section id="mission-vision" class="py-5">
+    <section id="vision-mission-cards" class="py-5">
         <div class="container">
             <div class="text-center mb-4">
-                <h2 class="font-montserrat text-[35px]">Seadex Mission and Vision</h2>
+                <h2 class="font-montserrat text-[35px]">Seadex Vision and Mission</h2>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- Vision Section -->
-                    <div class="d-flex align-items-center">
-                        <div class="mission-vision-image me-3">
-                            <img src="/img/Vision.png" alt="Vision Image" class="img-fluid rounded">
-                        </div>
-                        <div>
-                            <h3 class="font-montserrat text-[35px]">Vision</h3>
+            <div class="row g-4">
+                <!-- Vision Card -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="card shadow h-100 transition-all duration-300 hover:scale-105">
+                        <div class="card-body text-center">
+                            <div class="value-icon-container">
+                                <img src="/img/Vision.png" alt="Vision Icon" class="value-icon">
+                            </div>
+                            <h5 class="font-montserrat text-[25px]">Vision</h5>
                             <p class="font-roboto text-[18px] text-muted">
-                                To be the largest exporter representing Indonesia’s finest goods globally, while facilitating connections 
-                                between buyers and reputable sources of exceptional products.
+                                To be the largest exporter representing Indonesia’s finest goods globally, while facilitating connections between buyers and reputable sources of exceptional products.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <!-- Mission Section -->
-                    <div class="d-flex align-items-center">
-                        <div class="mission-vision-image me-3">
-                            <img src="/img/Mission.png" alt="Mission Image" class="img-fluid rounded">
-                        </div>
-                        <div>
-                            <h3 class="font-montserrat text-[35px]">Mission</h3>
+                <!-- Mission Card -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="card shadow h-100 transition-all duration-300 hover:scale-105">
+                        <div class="card-body text-center">
+                            <div class="value-icon-container">
+                                <img src="/img/Mission.png" alt="Mission Icon" class="value-icon">
+                            </div>
+                            <h5 class="font-montserrat text-[25px]">Mission</h5>
                             <p class="font-roboto text-[18px] text-muted">
                                 To deliver only the best of Indonesia’s high-quality goods to the world.
                             </p>
@@ -74,7 +73,6 @@
                 <h2 class="font-montserrat text-[35px]">Seadex Values</h2>
             </div>
             <div class="row g-4">
-                <!-- Cards for Values -->
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card shadow h-100 transition-all duration-300 hover:scale-105">
