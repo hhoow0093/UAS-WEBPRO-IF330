@@ -9,11 +9,30 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::all();
-        return view('components.product-page', ['categories' => $categories, 'title' => "Products"]);
+        $searchTerm = $request->query('product_name'); 
+
+        if ($searchTerm) {
+         
+            $categories = Category::with(['products' => function ($query) use ($searchTerm) {
+                $query->where('nama', 'LIKE', "%{$searchTerm}%");
+            }])->get();
+
+            $isSearch = true;
+        } else {
+            $categories = Category::with('products')->get();
+            $isSearch = false;
+        }
+
+        return view('components.product-page', [
+            'categories' => $categories,
+            'title' => "Products",
+            'searchTerm' => $searchTerm,
+            'isSearch' => $isSearch,
+        ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -106,17 +125,18 @@ class ProductController extends Controller
     }
 
     public function toggleInterest(Product $product)
-{
-    $user = auth()->user();
+    {
+        $user = auth()->user();
 
-    if ($user->products->contains($product->id)) {
-        $user->products()->detach($product->id); // Remove the relation
-    } else {
-        $user->products()->attach($product->id); // Add the relation
+        if ($user->products->contains($product->id)) {
+            $user->products()->detach($product->id); // Remove the relation
+        } else {
+            $user->products()->attach($product->id); // Add the relation
+        }
+
+        return back()->with('success', 'Product interest updated!');
     }
 
-    return back()->with('success', 'Product interest updated!');
-}
 
 }
 

@@ -15,23 +15,26 @@
     </section>  
 
     <div class="container mt-2 d-flex align-items-center">
-        <form method="POST" action="" class="d-flex align-items-center me-auto">
-            <input type="text" name="item_name" class="form-control me-2" placeholder="Search for items">
-            <button type="submit" class="btn btn-success">Search</button>
-        </form>
-
-        @guest
-            <a href="{{ route('login') }}" class="btn btn-primary me-2">Login</a>
-            <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
-        @endguest
-
-        @auth
-            <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                @csrf
-                <button type="submit" class="btn btn-link text-decoration-none">Logout</button>
-            </form>
-        @endauth
+    <form method="GET" action="{{ url()->current() }}" class="d-flex align-items-center me-auto p-3 rounded shadow-sm">
+        <input 
+            type="text" 
+            name="product_name" 
+            class="form-control me-2 border border-success rounded-pill" 
+            placeholder="Search for products" 
+            value="{{ request('product_name') }}" 
+            style="max-width: 300px; padding: 0.5rem;">
+        <button type="submit" class="btn btn-success px-4 py-2 rounded-pill">Search</button>
+    </form>
     </div>
+    
+    <div class="container">
+        @if($isSearch && $searchTerm)
+        <h3>Search Results for "{{ $searchTerm }}"</h3>
+        @else
+            <h3>All Categories and Products</h3>
+        @endif
+    </div>
+
 
     <section class="product-categories my-5">
         <div class="container">
@@ -56,9 +59,12 @@
         @if($category->products->isNotEmpty())
             <section id="{{ $category->name }}-section" class="bg-light py-5">
                 <div class="container">
-                    <h2 class="text-center mb-4" style="color: rgb(5, 89, 158);">{{ ucfirst($category->name) }} Products</h2>
+                    <h2 class="text-center mb-4" style="color: rgb(5, 89, 158);">
+                        {{ ucfirst($category->name) }} Products
+                    </h2>
+
                     <div class="row justify-content-around">
-                        @forelse($category->products as $product)
+                        @foreach($category->products as $product)
                             <div class="col-12 col-md-6">
                                 <div class="card mb-4">
                                     <div class="card-body">
@@ -77,16 +83,23 @@
                                     </div>
                                 </div>
                             </div>
-                        @empty
-                            <div class="col-12">
-                                <p>No products available in this category.</p>
-                            </div>
-                        @endforelse
+                        @endforeach
                     </div>
                 </div>
             </section>
+        @else   
+        
+            <!-- <section id="{{ $category->name }}-section" class="bg-light py-5">
+                <div class="container">
+                    <h2 class="text-center mb-4" style="color: rgb(5, 89, 158);">
+                        {{ ucfirst($category->name) }} Products
+                    </h2>
+                    <p class="text-center">No products available in this category.</p>
+                </div>
+            </section> -->
         @endif
     @endforeach
+
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/mainSection.js"></script>
 </x-layout>
