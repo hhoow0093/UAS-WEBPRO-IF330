@@ -49,7 +49,7 @@ class CartController extends Controller
         $user = auth()->user();
         $user->products()->detach($id);
 
-        return redirect()->route('components.cart.index')->with('success', 'Product removed from cart.');
+        return redirect()->route('cart.index')->with('success', 'Product removed from cart.');
     }
 
 }
