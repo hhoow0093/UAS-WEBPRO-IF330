@@ -33,6 +33,12 @@
             </div>
 
             <div class="mb-3">
+                <label for="price" class="form-label">Price:</label>
+                <input type="number" id="price" name="price" value="{{ old('price') }}" class="form-control @error('price') is-invalid @enderror">
+                @error('price') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            <div class="mb-3">
                 <label for="gambar" class="form-label">Foto:</label>
                 <input type="file" id="gambar" name="gambar" class="form-control @error('gambar') is-invalid @enderror">
                 @error('gambar') <div class="invalid-feedback">{{ $message }}</div> @enderror

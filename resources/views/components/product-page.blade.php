@@ -15,16 +15,21 @@
     </section>  
 
     <div class="container mt-2 d-flex align-items-center">
-    <form method="GET" action="{{ url()->current() }}" class="d-flex align-items-center me-auto p-3">
-        <input 
-            type="text" 
-            name="product_name" 
-            class="form-control me-2 border border-success " 
-            placeholder="Search for products" 
-            value="{{ request('product_name') }}" 
-            style="max-width: 300px; padding: 0.5rem;">
-        <button type="submit" class="btn btn-success px-4 py-2 ">Search</button>
-    </form>
+        <form method="GET" action="{{ url()->current() }}" class="d-flex align-items-center me-auto p-3">
+            <input 
+                type="text" 
+                name="product_name" 
+                class="form-control me-2 border border-success " 
+                placeholder="Search for products" 
+                value="{{ request('product_name') }}" 
+                style="max-width: 300px; padding: 0.5rem;">
+            <button type="submit" class="btn btn-success px-4 py-2 ">Search</button>
+        </form>
+        @auth
+            <a href="{{ route('cart.index') }}" class="btn btn-outline-success ms-auto px-4 py-2">
+                Shopping Cart
+            </a>
+        @endauth
     </div>
     
     <div class="container">
@@ -70,19 +75,28 @@
                         @foreach($category->products as $product)
                             <div class="col-12 col-md-6">
                                 <div class="card mb-4">
+                                        @if ($product->featured == 1)
+                                            <div class="position-absolute top-0 start-90 bg-success text-white px-3 py-1 rounded-end">
+                                                Featured
+                                            </div>
+                                        @endif
                                     <div class="card-body">
                                         <img src="{{ asset('storage/' . $product->gambar) }}" alt="{{ $product->nama }}" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
                                         <h4 class="card-title">{{ $product->nama }}</h4>
                                         <p class="card-text">{{ $product->deskripsi }}</p>
+                                        <p class="card-text roboto text-[18px]">{{ $product->price }}</p>
                                         
                                         @auth
-                                            <form method="POST" action="{{ route('product.interested', $product->id) }}">
-                                                @csrf
-                                                @method('POST')
-                                                <button type="submit" class="btn btn-sm btn-outline-success">
-                                                    {{ Auth::user()->products->contains($product->id) ? 'Not Interested' : 'Interested' }}
-                                                </button>
-                                            </form>
+                                        <form method="POST" action="{{ route('product.buy', $product->id) }}">
+                                            @csrf
+                                            @method('POST')
+                                            <div class="d-flex align-items-center mb-3">
+                                                <label for="quantity-{{ $product->id }}" class="me-2">Quantity:</label>
+                                                <input type="number" name="quantity" id="quantity-{{ $product->id }}" class="form-control form-control-sm" value="1" min="1" style="width: 80px;">
+                                            </div>
+                                            <button type="submit" class="btn btn-sm btn-outline-success">Buy</button>
+                                        </form>
+
                                         @endauth
                                     </div>
                                 </div>

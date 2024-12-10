@@ -53,7 +53,7 @@ class User extends Authenticatable
 
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'product_user')->withTimestamps();
+        return $this->belongsToMany(Product::class, 'product_user')->withPivot('qty')->withTimestamps();
     }
 }
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\categoryController;
 use App\Http\Controllers\Seadex;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,8 +18,7 @@ Route::controller(Seadex::class)->group(function(){
     Route::get('/seadex/home', 'index')->name('seadex-index');
     Route::get('/seadex/services', 'services');
     Route::get('/seadex/aboutus', 'about');
-    Route::get('/seadex/products', 'product');
-    Route::post('/products/{product}/interested', [ProductController::class, 'toggleInterest'])->name('product.interested');
+    Route::get('/seadex/products', 'product')->name('product.page');
     Route::get('/seadex/contactus', 'showForm')->name('contact.form');
     Route::post('/seadex/contactus', 'submitForm')->name('contact.submit');
 });
@@ -48,3 +48,8 @@ Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('
 Route::post('/register', [UserController::class, 'register'])->name('register-post');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
+//shopping cart
+Route::post('/products/{product}/buy', [CartController::class, 'buy'])->name('product.buy');
+Route::get('/cart', [CartController::class, 'cart'])->name('cart.index');
+Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');    
+    

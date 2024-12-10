@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->boolean('featured')->default(1);
             $table->string('gambar')->nullable();
+            $table->integer('price')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

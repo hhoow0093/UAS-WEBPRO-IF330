@@ -25,6 +25,7 @@
                     <th>Username</th>
                     <th>Email</th>
                     <th>Interested Products</th>
+                    <th>Total Quantity</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,20 +37,27 @@
                             @if($user->products->isNotEmpty())
                                 <ul>
                                     @foreach($user->products as $product)
-                                        <li>{{ $product->nama }}</li>
+                                        <li>
+                                            {{ $product->nama }} 
+                                            <strong>(Qty: {{ $product->pivot->qty }})</strong>
+                                        </li>
                                     @endforeach
                                 </ul>
                             @else
                                 <span>No products interested</span>
                             @endif
                         </td>
+                        <td>
+                            {{ $user->products->sum('pivot.qty') }} <!-- Total quantity of all interested products -->
+                        </td>
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="3" class="text-center">No users found</td>
+                        <td colspan="4" class="text-center">No users found</td>
                     </tr>
                 @endforelse
             </tbody>
         </table>
+
     </div>
 </x-layout>

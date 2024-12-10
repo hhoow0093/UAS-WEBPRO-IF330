@@ -84,6 +84,7 @@
                                 <img src="{{ asset('storage/' . $product->gambar) }}" alt="{{ $product->nama }}" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
                                 <h4 class="card-title font-semiboldlora text-[35px]">{{ $product->nama }}</h4>
                                 <p class="card-text roboto text-[18px]">{{ $product->deskripsi }}</p>
+                                <p class="card-text roboto text-[18px]">{{ $product->price }}</p>
                                 <a href="/seadex/products/{{ $product->id }}/edit" class="btn btn-sm btn-outline-secondary">
                                     Edit
                                 </a>

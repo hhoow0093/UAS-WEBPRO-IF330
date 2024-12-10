@@ -52,6 +52,7 @@ class ProductController extends Controller
             'nama' => 'required|max:50',
             'deskripsi' => 'required|max:200',
             'kategori' => 'required|max:30',
+            'price' => 'integer',
             'featured' => 'required|boolean',
             'gambar' => 'required|image|mimes:jpeg,png,jpg',
         ]);
@@ -62,6 +63,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->nama = $request->nama;
         $product->deskripsi = $request->deskripsi;
+        $product->price = $request->price;
         $product->category_id = $category_id->id;
         $product->featured = $request->featured;
         $product->gambar = $path;
@@ -89,6 +91,7 @@ class ProductController extends Controller
         $request->validate([
             'nama' => 'required|max:50',
             'deskripsi' => 'required|max:200',
+            'price' => 'integer',
             'featured' => 'required|boolean',
             'gambar' => 'image|mimes:jpeg,png,jpg',
         ]);
@@ -102,6 +105,7 @@ class ProductController extends Controller
 
         $product->nama = $request->nama;
         $product->deskripsi = $request->deskripsi;
+        $product->price = $request->price;
         $product->featured = $request->featured;
         $product->save();
 
@@ -122,19 +126,6 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect(route('admin.products'))->with('success', 'Category deleted successfully!');
-    }
-
-    public function toggleInterest(Product $product)
-    {
-        $user = auth()->user();
-
-        if ($user->products->contains($product->id)) {
-            $user->products()->detach($product->id); // Remove the relation
-        } else {
-            $user->products()->attach($product->id); // Add the relation
-        }
-
-        return back()->with('success', 'Product interest updated!');
     }
 
 
