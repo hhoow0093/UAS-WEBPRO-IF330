@@ -1,4 +1,4 @@
-<section class="footer-seader" style="overflow: hidden;">
+<section class="footer-seader" style="overflow: hidden; margin-top:50px" id="foot">
     <footer class="row  border-top align-items-center p-4">
         <div class=" col-12 col-md-6 mb-3 ms-2">
               <img src="/img/color-seadex.webp" alt="seadex" height="75" width="225" class="mb-3">

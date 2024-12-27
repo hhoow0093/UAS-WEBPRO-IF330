@@ -48,7 +48,7 @@
                     </svg>
                     <h5>Our contact information</h5>
                     <h6>What will we can help from contacting us</h6>
-                    <button class="button">View Our Contact</button>
+                    <a href="/seadex/contactus/#foot"><button class="button">View Our Contact</button></a>
                 </div>
                 <div class="carda">
                     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
@@ -58,11 +58,11 @@
                     </svg>
                     <h5>Get in Touch by email</h5>
                     <h6>Ask your inquiry from our website immediately!</h6>
-                    <button class="button">Contact us now</button>
+                    <a href="/seadex/contactus/#contact"><button class="button">Contact us now</button></a>
                 </div>
             </div>
         </section>
-        <section class="section2">
+        <section class="section2" id="contact">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-6" style="line-height: 50px;">
