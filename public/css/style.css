@@ -1,20 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
 
+/* Base styles & Typography */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
 .montserrat {
     font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
+    font-size: clamp(24px, 4vw, 40px);
     font-weight: 600;
 }
 
 .lora {
     font-family: 'Lora', serif;
-    font-size: 35px;
+    font-size: clamp(20px, 3.5vw, 35px);
     font-weight: 600;
 }
 
 .roboto {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: clamp(16px, 2vw, 18px);
 }
 
 .merriweather {
@@ -27,30 +37,23 @@
     text-decoration-color: #fff;
     text-decoration-thickness: 5px;
     text-underline-offset: 10px;
-    font-size: 18px;
-}
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+    font-size: clamp(16px, 2vw, 18px);
 }
 
+/* Hide scrollbar */
 ::-webkit-scrollbar {
     display: none;
 }
 
 /* Navbar */
-@media (min-width: 992px) { 
-    .navbar-nav .nav-link.navbar1 {
-        color: white !important;
-        font-size: 1.1rem; 
-    }
+.navbar-nav .nav-link.navbar1 {
+    color: white !important;
+    font-size: clamp(1rem, 1.1vw, 1.1rem);
+}
 
-    .navbar-nav .nav-link.navbar2 {
-        color: black !important;
-        font-size: 1.1rem; 
-    }
+.navbar-nav .nav-link.navbar2 {
+    color: black !important;
+    font-size: clamp(1rem, 1.1vw, 1.1rem);
 }
 
 .navbar-nav .nav-link[aria-current="page"] {
@@ -69,10 +72,10 @@ body {
 .button {
     background-color: #009bb3;
     color: white;
-    padding: 10px 20px;
+    padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
     border-radius: 5px;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     transition: background-color 0.3s ease;
 }
 
@@ -83,29 +86,109 @@ body {
 
 /* About Section */
 .about {
-    padding: 2rem 1rem;
-    background: linear-gradient(to bottom, transparent, #e6f7fb);
+    padding: clamp(1rem, 3vw, 2rem);
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
 }
 
-.about h1 {
-    color: #125A95 !important; 
+#about {
+    background-image: url('/img/coffee.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 93vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 0;
 }
 
-.about p {
-    color: #333333 !important; 
+#about .position-absolute {
+    background: rgba(0, 0, 0, 0.6);
 }
 
-.about-text {
-    border-left: 4px solid #009BB3;
-    padding-left: 1.5rem;
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+#about .container {
+    position: relative;
+    z-index: 2;
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 2vw, 2rem);
+}
+
+#about h1 {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(30px, 4vw, 40px);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+#about-description {
+    margin-top: 30px; 
+    margin-bottom: -4rem; 
+    position: relative;
+    z-index: 2;
+}
+.about-title {
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    color: #125A95; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+#about-description .card {
+    background: #0f4d81; 
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: min(100%, 800px); 
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+#about-description .card-body {
+    padding: 1.5rem;
+}
+
+#about-description p {
+    color: #fff; 
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 1rem;
+    width: min(90%, 800px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    #about-description {
+        margin-top: -1rem;
+        margin-bottom: 1rem;
+    }
+    
+    #about-description .card-body {
+        padding: 1.5rem;
+    }
 }
 
 /* Mission & Vision Section */
 #mission-vision {
-    background: linear-gradient(to bottom, #e6f7fb, #ffffff); 
     padding: 2rem;
     border-radius: 10px;
     border-bottom: 3px solid #009bb3;
@@ -115,14 +198,13 @@ body {
 }
 #vision-mission-cards::before {
     content: "";
-    display: block;
-    width: 120%; /* Memperpanjang garis lebih dari lebar elemen */
+    width: 120%; 
     height: 3px;
-    background-color: #009bb3; /* Warna biru untuk pembatas */
-    margin-left: -10%; /* Menggeser garis ke kiri, agar terlihat lebih panjang */
-    margin-bottom: 1rem; /* Ruang antara garis dan konten */
+    background-color: #009bb3; 
+    margin-left: -10%; 
+    margin-bottom: 1rem;
     position: relative;
-    top: -2rem; /* Mengangkat garis sedikit ke atas */
+    top: -1rem; 
 }
 
 #mission-vision h2,
@@ -155,16 +237,16 @@ body {
 
 /* Seadex Vision & Mission Cards */
 #vision-mission-cards {
-    background: linear-gradient(to bottom, #e6f7fb, #ffffff);
-    padding: 3rem;
+    padding: 1rem;
     border-radius: 12px;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    padding-top: 0;
 }
 
 #vision-mission-cards h2 {
+    margin-top: 2rem; 
     color: #125A95;
     text-align: center;
-    margin-bottom: 2rem;
 }
 
 #vision-mission-cards .card {
@@ -189,23 +271,21 @@ body {
 
 @media (max-width: 768px) {
     #vision-mission-cards {
-        padding: 2rem;
+        padding: 1rem;
     }
     #vision-mission-cards .card {
         padding: 1rem;
     }
 }
-
 /* Values Section */
 #values {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    padding: 4rem 2rem;
+    padding: 4rem 2rem 0 2rem;
+    margin: 0;
     text-align: center;
-    background: linear-gradient(to top, #e6f7fb, #ffffff);
-    border-top: 3px solid #009bb3;
+    background-color: #e1f2f7 !important; 
 }
 
 #values .card {
@@ -215,15 +295,25 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1 1 calc(33.33% - 1.33rem);
-    box-sizing: border-box;
+    width: 100%; 
 }
+.card-custom-4 {
+    transform: translateX(218px);
+}
+
+.card-custom-5 {
+    transform: translateX(224px);
+}
+
 
 #values .card h5{
 color: #125A95 !important;
 }
 #values h2 {
-    color: #125A95 !important;
+    grid-column: span 3;
+    font-size: 2rem;
+    color: #125A95;
+    margin-bottom: 2rem;
 }
 
 #values .card:hover {
@@ -231,22 +321,44 @@ color: #125A95 !important;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+#values .sustainability {
+    grid-area: sustainability;
+}
+
+#values .excellence {
+    grid-area: excellence;
+}
+
+#values .dedication {
+    grid-area: dedication;
+    justify-self: center;
+}
+
+#values .accountability {
+    grid-area: accountability;
+}
+
+#values .expansion {
+    grid-area: expansion;
+}
+
 .value-icon-container {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #ffffff; 
-    border: 2px solid #009bb3; 
+    background-color: #ffffff;
+    border: 2px solid #009bb3;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 15px; 
+    margin: 0 auto 15px;
 }
+
 
 .value-icon {
     width: 78%;
-    height: auto; 
-    object-fit: contain; 
+    height: auto;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
@@ -254,14 +366,116 @@ color: #125A95 !important;
     transform: scale(1.1); 
 }
 
-@media (max-width: 768px) {
-    #values .card {
-        flex: 1 1 100%;
-        max-width: 100%;
+@media (max-width: 992px) {
+    #values {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "sustainability excellence"
+            "dedication dedication"
+            "accountability expansion";
     }
 }
 
-/* Keyframe Animation */
+@media (max-width: 768px) {
+    #about img {
+        width: 100%;
+        height: auto;
+    }
+    .font-montserrat {
+        font-size: 24px; 
+    }
+    .font-roboto {
+        font-size: 16px;
+    }
+}
+
+/* Banner */
+#highlight-banner {
+    background-color: #092c49;
+    color: white;
+    padding: clamp(0.5rem, 2vw, 1rem) 0;
+}
+
+#highlight-banner .highlight-text {
+    font-family: 'Lora', serif;
+    font-size: clamp(20px, 3.5vw, 35px);
+    font-weight: 600;
+}
+
+#highlight-banner .highlight-line {
+    width: min(90%, 641px);
+    height: 2px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Hover Effects */
+#values .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.value-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .card-custom-4,
+    .card-custom-5 {
+        transform: none;
+    }
+}
+
+@media (max-width: 992px) {
+    #values {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "sustainability excellence"
+            "dedication dedication"
+            "accountability expansion";
+    }
+}
+
+@media (max-width: 768px) {
+    #about img {
+        width: 100%;
+        height: auto;
+    }
+    
+    #values {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    #vision-mission-cards {
+        padding: 0.5rem;
+    }
+    
+    .card-custom-4,
+    .card-custom-5 {
+        transform: none;
+    }
+}
+
+@media (max-width: 576px) {
+    #about h1 {
+        font-size: 1.75rem;
+    }
+    
+    #mission-vision .col-md-6 {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .value-icon-container {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;

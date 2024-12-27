@@ -3,30 +3,33 @@
     <x-slot:title>About Us</x-slot:title>
     <x-navbar-tertiary></x-navbar-tertiary>
     <x-navbar-secondary></x-navbar-secondary>
-    <section id="about" class="about py-5 bg-light">
+    <section id="about" class="about py-5 position-relative text-white">
+        <div class="position-absolute w-100 h-100 top-0 start-0 bg-dark opacity-50"></div>
+            <div class="container position-relative z-index-2 text-center">
+                <h1 class="font-montserrat text-[40px]">About Us</h1>
+            </div>
+    </section>
+    <section id="about-description" class="py-4">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4">
-                    <h1 class="font-montserrat text-[40px]">About Us</h1>
-                    <p class="font-roboto text-[18px] text-muted lead" style="text-align: justify;">
+            <h2 class="about-title font-montserrat text-center text-[35px] mb-4">About Seadex</h2>
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="description-content">
+                        <p class="font-roboto text-[18px] lead mb-4" style="text-align: justify;">
                         At Seadex, we are dedicated to delivering the finest high-quality goods from Indonesia to the global market. 
                         Our commitment to sustainability and excellence is matched only by our focus on empowering local communities through fair trade practices and responsible sourcing. 
-                        We strive to create a transparent platform where buyers can easily find trusted and reliable sources of exceptional products without the risk of fraudulent activities, 
-                        ensuring that every partnership is built on integrity and quality.
-                    </p>
-                    <p class="font-roboto text-[18px] text-muted lead" style="text-align: justify;">
+                        We strive to create a transparent platform where buyers can easily find trusted and reliable sources of exceptional products without the risk of fraudulent activities, ensuring that every partnership is built on integrity and quality.
+                        </p>
+                        <p class="font-roboto text-[18px] lead" style="text-align: justify;">
                         We take full accountability for our operations, recognizing the impact of our decisions on our stakeholders and the environment. 
                         By adhering to the highest standards of ethical conduct, we aim to foster lasting relationships that prioritize the success and growth of our customers and the communities we serve. 
-                        At Seadex, we believe that accountability is not just a principle; it is the foundation of trust that enables us to excel in our mission of providing exceptional products and services.
-                    </p>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <img src="{{ asset('img/coffee.jpg') }}" class="img-fluid rounded" alt="About Us">
+                        At Seadex, we believe that accountability is not just a principle; it is the foundation of trust that enables us to excel in our mission of providing exceptional products and services.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Mission and Vision Section -->
     <section id="vision-mission-cards" class="py-5">
         <div class="container">
@@ -117,7 +120,7 @@
                     </div>
                 </div>
                 <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 card-custom-4">
                     <div class="card shadow h-100 transition-all duration-300 hover:scale-105">
                         <div class="card-body text-center">
                             <div class="value-icon-container">
@@ -131,7 +134,7 @@
                     </div>
                 </div>
                 <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 card-custom-5">
                     <div class="card shadow h-100 transition-all duration-300 hover:scale-105">
                         <div class="card-body text-center">
                             <div class="value-icon-container">
@@ -146,6 +149,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!--Text-->
+    <section id="highlight-banner" class="py-5">
+        <div class="container text-center">
+            <h2 class="highlight-text">Delivering Indonesia's Finest to the World</h2>
+            <div class="highlight-line"></div>
         </div>
     </section>
     <x-footer></x-footer>
