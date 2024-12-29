@@ -161,7 +161,7 @@
             document.querySelector('.loader').style.opacity = "0";
             setTimeout(function() {
                 document.querySelector('.loader').style.display = "none";
-            }, 500); // Wait for the transition to complete
+            }, 500);
         }, 2000);
     };
 </script>

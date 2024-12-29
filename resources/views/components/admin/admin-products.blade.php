@@ -64,9 +64,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
 
-    @foreach($categories as $category)
+     @foreach($categories as $category)
         <section id="{{ $category->name }}-section" class="bg-light py-5">
             <div class="container">
                 <h2 class="text-center mb-4" style="color: rgb(5, 89, 158);">{{ ucfirst($category->name) }} Products</h2>
@@ -106,7 +106,7 @@
             </div>
         </section>
     @endforeach
-    <x-modals.create-category-modals />
+     <x-modals.create-category-modals />
 
     <script>
         document.querySelectorAll('.scroll-link').forEach(link => {

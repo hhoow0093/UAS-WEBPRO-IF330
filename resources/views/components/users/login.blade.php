@@ -48,7 +48,7 @@
                             <a href="{{ route('register') }}"><button type="submit" class="btn container-fluid text-white" style="background-color: #125A95;">Don't have an account? Register here</button></a>
                         </div>
                         <div class="col-12 text-center">
-                            <a href="/"><button type="submit" class="btn container-fluid text-white" style="background-color: #0077c1;">Back to home page</button></a>
+                            <a href="/seadex/home"><button type="submit" class="btn container-fluid text-white" style="background-color: #0077c1;">Back to home page</button></a>
                         </div>
                     </div>
                 </div>

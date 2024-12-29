@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\EnsureNotAdmin;
 
 
 
@@ -14,14 +15,18 @@ Route::get('/', function () {
     return redirect('/seadex/home');
 });
 
-Route::controller(Seadex::class)->group(function(){
-    Route::get('/seadex/home', 'index')->name('seadex-index');
-    Route::get('/seadex/services', 'services');
-    Route::get('/seadex/aboutus', 'about');
-    Route::get('/seadex/products', 'product')->name('product.page');
-    Route::get('/seadex/contactus', 'showForm')->name('contact.form');
-    Route::post('/seadex/contactus', 'submitForm')->name('contact.submit');
+Route::middleware([EnsureNotAdmin::class])->group(function () {
+    Route::controller(Seadex::class)->group(function(){
+        Route::get('/seadex/home', 'index')->name('seadex-index');
+        Route::get('/seadex/services', 'services');
+        Route::get('/seadex/aboutus', 'about');
+        Route::get('/seadex/products', 'product')->name('product.page');
+        Route::get('/seadex/contactus', 'showForm')->name('contact.form');
+        Route::post('/seadex/contactus', 'submitForm')->name('contact.submit');
+    });
 });
+
+
 
 // Admin Routes
 Route::middleware(['auth', 'Admin'])->group(function () {

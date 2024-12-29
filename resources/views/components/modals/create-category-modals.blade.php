@@ -1,4 +1,3 @@
-<x-layout>
 <div class="modal fade" id="createCategoryModal" tabindex="-1" aria-labelledby="createCategoryModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -23,4 +22,3 @@
         </div>
     </div>
 </div>
-</x-layout>
