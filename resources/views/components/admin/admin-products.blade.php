@@ -48,7 +48,7 @@
                                 @endif
                                 <h4 class="card-title">{{ $category->name }}</h4>
                                 <a href="#{{ $category->name }}-section" class="btn btn-outline-primary">View {{ ucfirst($category->name) }}</a>
-                                <form action="deleteCategory/{{ $category->id }}" method="POST" class="pt-2">
+                                <form action="/seadex/deleteCategory/{{ $category->id }}" method="POST" class="pt-2">
                                     @csrf
                                     @method('DELETE')
                                     <input type="submit" class="btn btn-sm btn-outline-danger" value="Delete">
