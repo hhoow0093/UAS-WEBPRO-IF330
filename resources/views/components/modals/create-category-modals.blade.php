@@ -10,11 +10,26 @@
                     @csrf
                     <div class="mb-3">
                         <label for="categoryName" class="form-label">Category Name</label>
-                        <input type="text" class="form-control" id="categoryName" name="name" required>
+                        <input type="text" 
+                               class="form-control @error('name') is-invalid @enderror" 
+                               id="categoryName" 
+                               name="name" 
+                               value="{{ old('name') }}" 
+                               required>
+                        @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="categoryImage" class="form-label">Category Image</label>
-                        <input type="file" class="form-control" id="categoryImage" name="image" accept="image/*">
+                        <input type="file" 
+                               class="form-control @error('image') is-invalid @enderror" 
+                               id="categoryImage" 
+                               name="image" 
+                               accept="image/*">
+                        @error('image')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Create</button>
                 </form>

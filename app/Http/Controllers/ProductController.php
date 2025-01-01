@@ -115,6 +115,7 @@ class ProductController extends Controller
     public function destroy(Product $product, string $id)
     {
         $product = Product::findOrFail($id);
+        Storage::disk('public')->delete($product->gambar);
         $product->delete();
 
         return redirect(route('admin.products'))->with('success', 'Product deleted successfully!');
@@ -123,6 +124,7 @@ class ProductController extends Controller
     public function destroyCategory(Product $product, string $id)
     {
         $product = Category::findOrFail($id);
+        Storage::disk('public')->delete($product->image);
         $product->delete();
 
         return redirect(route('admin.products'))->with('success', 'Category deleted successfully!');

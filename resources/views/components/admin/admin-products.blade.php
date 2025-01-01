@@ -1,8 +1,35 @@
 <x-layout>
     <link rel="stylesheet" href="/css/mainSection.css">
     <x-slot:title>Halaman Products</x-slot:title>
-    
+    @if ($errors->any())
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var myModal = new bootstrap.Modal(document.getElementById('createCategoryModal'));
+                myModal.show();
+            });
+        </script>
+    @endif
     <x-modals.alert />
+    <!-- delete-confirmation-modal -->
+    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete <strong id="itemName"></strong>?</p>
+                    <form id="deleteForm" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="/">Home</a>
@@ -48,10 +75,44 @@
                                 @endif
                                 <h4 class="card-title">{{ $category->name }}</h4>
                                 <a href="#{{ $category->name }}-section" class="btn btn-outline-primary">View {{ ucfirst($category->name) }}</a>
-                                <form action="/seadex/deleteCategory/{{ $category->id }}" method="POST" class="pt-2">
+                                <div>
+                                    <button class="btn btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#editCategoryModal-{{ $category->id }}">Edit</button>
+                                    <form action="/seadex/deleteCategory/{{ $category->id }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this category?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="button" class="mt-2 btn btn-outline-danger delete-btn"data-name="{{ $category->name }}"data-action="{{ route('categories.destroy', $category->id) }}"data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">
+                                        Delete
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- edit-category-modal -->
+                    <div class="modal fade" id="editCategoryModal-{{ $category->id }}" tabindex="-1" aria-labelledby="editCategoryModalLabel-{{ $category->id }}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editCategoryModalLabel-{{ $category->id }}">Edit Category</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="{{ route('categories.update', $category->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    @method('DELETE')
-                                    <input type="submit" class="btn btn-sm btn-outline-danger" value="Delete">
+                                    @method('PUT')
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Category Name</label>
+                                            <input type="text" id="name" name="name" class="form-control" value="{{ $category->name }}" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="image" class="form-label">Image</label>
+                                            <input type="file" id="image" name="image" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -84,14 +145,16 @@
                                 <img src="{{ asset('storage/' . $product->gambar) }}" alt="{{ $product->nama }}" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
                                 <h4 class="card-title font-semiboldlora text-[35px]">{{ $product->nama }}</h4>
                                 <p class="card-text roboto text-[18px]">{{ $product->deskripsi }}</p>
-                                <p class="card-text roboto text-[18px]">{{ $product->price }}</p>
+                                <p class="card-text roboto text-[18px]">Rp {{ $product->price }}</p>
                                 <a href="/seadex/products/{{ $product->id }}/edit" class="btn btn-sm btn-outline-secondary">
                                     Edit
                                 </a>
                                 <form action="/seadex/products/{{ $product->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <input type="submit" class="btn btn-sm btn-outline-danger" value="Delete">
+                                    <button type="button" class="btn btn-sm mt-2 btn-outline-danger delete-btn"data-name="{{ $product->nama }}"data-action="{{ route('products.destroy', $product->id) }}"data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">
+                                        Delete
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -106,7 +169,7 @@
             </div>
         </section>
     @endforeach
-     <x-modals.create-category-modals />
+    <x-modals.create-category-modals />
 
     <script>
         document.querySelectorAll('.scroll-link').forEach(link => {
@@ -127,8 +190,18 @@
                 }
             });
         });
-    </script>
 
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const itemName = this.dataset.name;
+                const actionUrl = this.dataset.action;
+
+                document.getElementById('itemName').textContent = itemName;
+                document.getElementById('deleteForm').setAttribute('action', actionUrl);
+            });
+        });
+    </script>
+    
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/mainSection.js"></script>
 </x-layout>

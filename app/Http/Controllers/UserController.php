@@ -14,26 +14,26 @@ class UserController extends Controller
     }
 
     public function login(Request $request)
-{
-    $credentials = $request->validate([
-        'email' => 'required|email',
-        'password' => 'required',
-    ]);
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-    if (Auth::attempt($credentials)) {
-        $request->session()->regenerate();
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
 
-        if (Auth::user()->role === 'admin') {
-            return redirect('/admin/products');
+            if (Auth::user()->role === 'admin') {
+                return redirect('/admin/products');
+            }
+
+            return redirect('/seadex/products');
         }
 
-        return redirect('/seadex/products');
+        return back()->withErrors([
+            'email' => 'Email or password is incorrect.',
+        ]);
     }
-
-    return back()->withErrors([
-        'email' => 'Email or password is incorrect.',
-    ]);
-}
 
     public function showRegistrationForm()
     {
@@ -53,9 +53,6 @@ class UserController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
-        Auth::attempt(['email' => $data['email'], 'password' => $data['password']]);
-
         return redirect('/login');
     }
 

@@ -91,7 +91,7 @@
                                             style="height: 200px; object-fit: cover;">
                                         <h4 class="card-title">{{ $product->nama }}</h4>
                                         <p class="card-text">{{ $product->deskripsi }}</p>
-                                        <p class="card-text roboto text-[18px]">{{ $product->price }}</p>
+                                        <p class="card-text roboto text-[18px]">Rp {{ $product->price }}</p>
 
                                         @auth
                                             <form method="POST" action="{{ route('product.buy', $product->id) }}">
