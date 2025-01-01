@@ -46,9 +46,19 @@
                     </li>
                 @endguest
                 @auth
-                    <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                        <a href="{{ route('logout') }}" class="nav-link navbar1 active fw-bold">Logout</a>
-                    </li>
+                <li class="nav-item dropdown px-3 px-lg-0 py-1 py-lg-4">
+                    <a class="nav-link dropdown-toggle navbar1 active fw-bold" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black !important;">
+                        {{ Auth::user()->name }}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li>
+                            <a class="dropdown-item" href="{{ route('user.edit') }}">Edit Profile</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                        </li>
+                    </ul>
+                </li>
                 @endauth
             </ul>
         </div>

@@ -27,8 +27,6 @@ Route::middleware([EnsureNotAdmin::class])->group(function () {
     });
 });
 
-
-
 // Admin Routes
 Route::middleware(['auth', 'Admin'])->group(function () {
     Route::get('/admin/products', [AdminController::class, 'index'])->name('admin.products');
@@ -45,6 +43,8 @@ Route::middleware(['auth', 'Admin'])->group(function () {
     //categories 
     Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
     Route::post('/categories/store', [categoryController::class, 'store'])->name('categories.store');
+    //user
+    Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 });
 
 //view
@@ -57,8 +57,11 @@ Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('
 Route::post('/register', [UserController::class, 'register'])->name('register-post');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
-//shopping cart
-Route::post('/products/{product}/buy', [CartController::class, 'buy'])->name('product.buy');
-Route::get('/cart', [CartController::class, 'cart'])->name('cart.index');
-Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');    
-    
+//logged in users
+Route::middleware(['auth'])->group(function () {
+    Route::post('/products/{product}/buy', [CartController::class, 'buy'])->name('product.buy');
+    Route::get('/cart', [CartController::class, 'cart'])->name('cart.index');
+    Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');    
+    Route::get('/user/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::put('/user/update', [UserController::class, 'update'])->name('user.update');
+});
