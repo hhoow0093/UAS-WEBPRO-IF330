@@ -23,26 +23,26 @@
             </button>
             <ul class="navbar-nav ms-lg-auto p-4 p-lg-1">
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link navbar1 active fw-bold" href="/seadex/home">Home</a>
+                    <a class="nav-link navbar1 active fw-bold" href="/seadex/home" >Home</a>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link navbar1 active fw-bold" href="/seadex/services">Services</a>
+                    <a class="nav-link navbar1 active fw-bold" href="/seadex/services" >Services</a>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link navbar1 active fw-bold" href="/seadex/products">Products</a>
+                    <a class="nav-link navbar1 active fw-bold" href="/seadex/products" >Products</a>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link navbar1 active fw-bold" href="/seadex/aboutus">About us</a>
+                    <a class="nav-link navbar1 active fw-bold" href="/seadex/aboutus" >About us</a>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                    <a class="nav-link navbar1 active fw-bold" href="/seadex/contactus">Contact us</a>
+                    <a class="nav-link navbar1 active fw-bold" href="/seadex/contactus" >Contact us</a>
                 </li>
                 @guest
                     <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                        <a href="{{ route('login') }}" class="nav-link navbar1 active fw-bold">Login</a>
+                        <a href="{{ route('login') }}" class="nav-link navbar1 active fw-bold" class="kecil">Login</a>
                     </li>
                     <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                        <a href="{{ route('register') }}" class="nav-link navbar1 active fw-bold">Register</a>
+                        <a href="{{ route('register') }}" class="nav-link navbar1 active fw-bold" class="kecil">Register</a>
                     </li>
                 @endguest
                 @auth
@@ -52,10 +52,10 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                         <li>
-                            <a class="dropdown-item" href="{{ route('user.edit') }}">Edit Profile</a>
+                            <a class="dropdown-item" href="{{ route('user.edit') }}" >Edit Profile</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" >Logout</a>
                         </li>
                     </ul>
                 </li>
