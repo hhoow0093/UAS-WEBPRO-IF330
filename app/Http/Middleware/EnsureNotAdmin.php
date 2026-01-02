@@ -17,8 +17,8 @@ class EnsureNotAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->isAdmin()) {
-            return redirect('/admin/products'); // Redirect to admin page or any other page
+        if(Auth::check() && Auth::user()->isAdmin()) {
+            return redirect('/admin/products'); 
         }
 
         return $next($request);
