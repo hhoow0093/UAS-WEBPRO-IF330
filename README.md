@@ -6,10 +6,10 @@
 ![Livewire](https://img.shields.io/badge/Frontend-Livewire-FB70A9?style=flat&logo=livewire)
 ![Bootstrap](https://img.shields.io/badge/Styling-Bootstrap%205-7952B3?style=flat&logo=bootstrap)
 
-## 📺 Project Demo
-> *[Insert Link to YouTube Video, Screenshots, or GIF Walkthrough Here]*
+##  Project Demo
+> <img src="./images/seadex.gif" width="600" alt="Seadex Demo GIF">
 >
-> **Status:** 🚧 Prototype
+> **Status:** Prototype
 
 ## Description
 **Seadex** is a full-stack web application designed to serve as both a corporate profile and a product management system. Built on **Laravel 11**, it demonstrates a robust implementation of backend logic for e-commerce workflows.
@@ -22,7 +22,12 @@ The platform bridges the gap between informational content and inventory managem
 * **Admin Dashboard:** Restricted area for inventory control and category management.
 * **Relational Data:** Optimized MySQL schema handling Many-to-Many relationships between users and products.
 
-## Architecture & Tech Stack
+## Architecture, design, & Tech Stack
+
+### UI/UX Design
+The user interface was prototyped in Figma to ensure a consistent user journey before implementation.
+
+[![View Figma Prototype](https://img.shields.io/badge/View_Figma_Prototype-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/proto/ZsAc0xdTTc40RgNeiH17nV/UAS-WEBPROG?node-id=0-1&t=VsDn5ngIK2L0vlMR-1)
 
 **Backend:**
 * **Framework:** Laravel 11.9
@@ -36,6 +41,11 @@ The platform bridges the gap between informational content and inventory managem
 * **Styling:** Bootstrap 5
 
 **Security:**
+## Database Schema
+The application uses a relational database structure designed for scalability. The schema handles complex relationships including the `product_user` pivot table for order management.
+
+<img src="./images/erd.png" width="300" alt="Seadex ERD Schema">
+
 * **RBAC:** Custom Middleware (`Auth`, `User` roles) to protect `/adminpage` routes.
 * **CSRF Protection:** Native Laravel token verification for all forms.
 
@@ -103,6 +113,3 @@ Visit `http://localhost:8000` in your browser.
 | **Catalog** | `/seadex/products` | Browse all products. | Public |
 | **Admin Panel** | `/adminpage` | Dashboard for admins. | **Admin Only** |
 | **Product Mgmt** | `/seadex/products/create` | Add new inventory. | **Admin Only** |
-
-## Contributing
-This is a portfolio prototype and is not open for public contribution at this time.
